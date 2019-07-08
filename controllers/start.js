@@ -21,9 +21,9 @@ var post_start = async (ctx, next) => {
         video_order : video_order,
         count : 1,
         result : [],
-        video_time :[],
-        grade_time:[],
-        start: start 
+        video_time : [],
+        grade_time : [],
+        start : start
     };
     let value =  Buffer.from(JSON.stringify(user)).toString('base64');
     ctx.cookies.set('name', value);
@@ -62,7 +62,8 @@ var post_back2video = async (ctx, next) => {
         title: title, video_src: video_src
     });
 }
- var post_next = async (ctx, next) => {
+
+var post_next = async (ctx, next) => {
     var user = ctx.state.user;
     var grade = ctx.request.body.sentiment;
     user.result.push(grade);
@@ -83,40 +84,56 @@ var post_back2video = async (ctx, next) => {
         });
     }
     else {
-        console.log(user.result);
-        var filename = "./results/" + user.mturkID + ".txt";
-        var write_data = [];
-        var write_video_time = [], write_grade_time =[];
-        for(var i in user.video_order) {
-            write_data[user.video_order[i] - 1] = user.result[i];
-            write_video_time[user.video_order[i] - 1] = user.video_time[i];
-            write_grade_time[user.video_order[i] - 1] = user.grade_time[i];
-        }
-        fs.writeFile(filename, write_data + '\n'+ user.video_order + '\n' + 
-                    write_video_time + '\n'
-                     + write_grade_time + '\n' + user.mturkID + '\n' 
-                     + user.device + '\n' + user.age + '\n' 
-                     + user.network , function(err) {
-            if(err) {
-                return console.log(err);
-            }
-        });
-        // clear cookie
-        ctx.cookies.set('name','');
-
-        var return_code = "0lMq2GKqLDSUgYAGc=";
-        ctx.render('ending.html', {
-            title: 'Thank you', return_code:return_code
+         // set new cookie
+        let value =  Buffer.from(JSON.stringify(user)).toString('base64');
+        ctx.cookies.set('name', value);
+        ctx.render('reason.html', {
+            title: 'Post Survey Question'
         });
     }
 }
 
+var post_end = async (ctx, next) => {
+    var user = ctx.state.user;
+    
+    // set user reason
+    var reason = ctx.request.body.Reason;
+    console.log("reason is " + reason + "\n");
+    user.reason = reason;
 
+    // record results
+    console.log(user.result);
+    var filename = "./results/" + user.mturkID + ".txt";
+    var write_data = [];
+    var write_video_time = [], write_grade_time =[];
+    for(var i in user.video_order) {
+        write_data[user.video_order[i] - 1] = user.result[i];
+        write_video_time[user.video_order[i] - 1] = user.video_time[i];
+        write_grade_time[user.video_order[i] - 1] = user.grade_time[i];
+    }
+    fs.writeFile(filename, write_data + '\n'+ user.video_order + '\n' + 
+                write_video_time + '\n'
+                 + write_grade_time + '\n' + user.mturkID + '\n' 
+                 + user.device + '\n' + user.age + '\n' 
+                 + user.network + '\n' + user.reason, function(err) {
+        if(err) {
+            return console.log(err);
+        }
+    });
+    // clear cookie
+    ctx.cookies.set('name','');
+    
+    var return_code = "0lMq2GKqLDSUgYAGc=";
+    ctx.render('ending.html', {
+        title: 'Thank you', return_code:return_code
+    });
+}
+                 
 
 module.exports = {
     'POST /start' : post_start,
     'POST /grade': post_grade,
     'POST /back2video':post_back2video,
-    'POST /next' : post_next
-
+    'POST /next' : post_next,
+    'POST /end' : post_end
 };
