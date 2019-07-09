@@ -1,15 +1,23 @@
 // start test:
-var getOder = require('../models/random')
-var fs = require('fs')
-var video_url = "https://github.com/sheric98/QoEProject/raw/master/videos/buffered/";
+var getOder = require('../models/random');
+var fs = require('fs');
 
+const vid_folder = "buffered2";
+var vid_path = "videos/" + vid_folder;
+var video_url = "https://github.com/sheric98/QoEProject/raw/master/videos/" + vid_folder;
+
+var num_vids;
+fs.readdir(vid_path, function(err, files) {
+    num_vids = files.length;
+    console.log(vid_path + " has " + num_vids + " files");
+});
 
 var post_start = async (ctx, next) => {
     var mturkID = ctx.request.body.MTurkID;
     var device = ctx.request.body.device;
     var age = ctx.request.body.age;
     var network = ctx.request.body.network;
-    var video_order = getOder(1,5);
+    var video_order = getOder(1,num_vids);
     console.log(mturkID, device, age);
     var start = new Date().getTime();
 
@@ -31,9 +39,10 @@ var post_start = async (ctx, next) => {
     // https://github.com/michaelliao/learn-javascript/raw/master/video/vscode-nodejs.mp4
     // very interesting url!
 
+    var title = "1/" + num_vids;
 
     ctx.render('video.html', {
-        title: '1/5', video_src : video_src
+        title: title, video_src : video_src
     });
 }
 
@@ -47,9 +56,9 @@ var post_grade= async (ctx, next) => {
     let value =  Buffer.from(JSON.stringify(user)).toString('base64');
     ctx.cookies.set('name', value);
 
-    var title = user.count + "/5";
+    var title = user.count + "/" + num_vids;
     ctx.render('grade.html', {
-        title: title, count: user.count
+        title: title, count: user.count, num_vids: num_vids
     });
 }
 
@@ -57,7 +66,7 @@ var post_grade= async (ctx, next) => {
 var post_back2video = async (ctx, next) => {
     var user = ctx.state.user;
     var video_src = video_url + user.video_order[user.count - 1] + ".mp4";
-    var title = user.count +"/5";
+    var title = user.count + "/" + num_vids;
     ctx.render('video.html', {
         title: title, video_src: video_src
     });
@@ -71,10 +80,10 @@ var post_next = async (ctx, next) => {
     var exe_time = end - user.start;
     user.grade_time.push(exe_time);
     user.start = end;
-    if(user.count < 5) {
+    if(user.count < num_vids) {
         var video_src = video_url + user.video_order[user.count] + ".mp4";
         user.count = user.count + 1;
-        var title = user.count +"/5";
+        var title = user.count + "/" + num_vids;
 
         // set new cookie
         let value =  Buffer.from(JSON.stringify(user)).toString('base64');
