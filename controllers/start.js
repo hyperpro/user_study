@@ -4,7 +4,7 @@ var fs = require('fs');
 
 const vid_folder = "buffered2";
 var vid_path = "videos/" + vid_folder;
-var video_url = "https://github.com/sheric98/QoEProject/raw/master/videos/" + vid_folder;
+var video_url = "https://github.com/sheric98/QoEProject/raw/master/videos/" + vid_folder + "/";
 
 var num_vids;
 fs.readdir(vid_path, function(err, files) {
