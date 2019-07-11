@@ -1,11 +1,15 @@
 import numpy as np
 import glob
 import re
-
-indices = [0, 1, 2, 3, 4]
+import os
 
 txt_files = glob.glob("../results/*.txt")
-
+vid_path = "../videos/buffered2"
+list_dir = os.listdir(vid_path)
+count = 0
+for file in list_dir:
+    if file.endswith(".mp4"):
+        count += 1
 
 def get_results():
     ret = []
@@ -15,8 +19,8 @@ def get_results():
             user_list = []
             for numbers in (lines[:4]):
                 nums = re.split(r'[,\n]', numbers)[:-1]
-                nums_arr = np.zeros(5, dtype=int)
-                for i in indices:
+                nums_arr = np.zeros(count, dtype=int)
+                for i in range(count):
                     if nums[i] != '':
                         nums_arr[i] = int(nums[i])
                 user_list.append(nums_arr)

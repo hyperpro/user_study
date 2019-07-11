@@ -77,6 +77,7 @@ grade_list = []
 order_list = []
 vid_time_list = []
 grade_time_list = []
+user_reason_list = []
 device_arr = np.zeros(5, dtype=int)
 age_arr = np.zeros(7, dtype=int)
 network_arr = np.zeros(4, dtype=int)
@@ -89,6 +90,9 @@ for user in res:
     count_device(user[5], device_arr)
     count_age(user[6], age_arr)
     count_network(user[7], network_arr)
+    # make a pair of userID and reason
+    pair = [user[4], user[8]]
+    user_reason_list.append(pair)
 
 # Interpret Grades
 grades = np.stack((grade_list), axis = -1)
@@ -202,7 +206,14 @@ log.write("################\n\n")
 log.write("WiFi: %d\n" % network_arr[0])
 log.write("Cable network: %d\n" % network_arr[1])
 log.write("Cellular network: %d\n" % network_arr[2])
-log.write("Other: %d\n" % network_arr[3])
+log.write("Other: %d\n\n" % network_arr[3])
+
+log.write("###########\n")
+log.write("#REASONING#\n")
+log.write("###########\n\n")
+
+for pair in user_reason_list:
+    log.write("%s: %s\n" % (pair[0], pair[1]))
 
 log.close()
 
