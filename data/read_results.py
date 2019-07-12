@@ -1,9 +1,8 @@
 import numpy as np
 import glob
 import re
-import os
+import os, os.path
 
-txt_files = glob.glob("../results/*.txt")
 vid_path = "../videos/buffered2"
 list_dir = os.listdir(vid_path)
 count = 0
@@ -11,7 +10,9 @@ for file in list_dir:
     if file.endswith(".mp4"):
         count += 1
 
-def get_results():
+def get_results(path):
+    txt_path = os.path.join(path, "*.txt")
+    txt_files = glob.glob(txt_path)
     ret = []
     for file in txt_files:
         with open(file, "r") as fp:

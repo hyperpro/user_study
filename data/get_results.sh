@@ -8,13 +8,13 @@ PLOT_1=${RES_NAME}_plot.png
 PLOT_2=${RES_NAME}_standardized_plot.png
 LOG_1=${RES_NAME}_results.log
 
-FILE_CHECK1=fig/$PLOT_1
-FILE_CHECK2=fig/$PLOT_2
-FILE_CHECK3=logs/$LOG_1
+FILE_CHECK1=../fig/$PLOT_1
+FILE_CHECK2=../fig/$PLOT_2
+FILE_CHECK3=../logs/$LOG_1
 
-FILE_1=data/$PLOT_1
-FILE_2=data/$PLOT_2
-FILE_3=data/$LOG_1
+FILE_1=$PLOT_1
+FILE_2=$PLOT_2
+FILE_3=$LOG_1
 
 EXISTS=0
 
@@ -32,21 +32,21 @@ if [[ -f "$FILE_CHECK3" ]]; then
 fi
 
 if [[ $EXISTS == 0 ]]; then
-    python data/plot_results.py $RES_NAME
+    python plot_results.py $RES_NAME
     if [[ -f "$FILE_1" ]]; then
-        mv $FILE_1 fig/
+        mv $FILE_1 ../fig/
         echo "$FILE_CHECK1 created successfully"
     else
         echo "Failed to create $PLOT_1"
     fi
     if [[ -f "$FILE_2" ]]; then
-        mv $FILE_2 fig/
+        mv $FILE_2 ../fig/
         echo "$FILE_CHECK2 created successfully"
     else
         echo "Failed to create $PLOT_2"
     fi
     if [[ -f "$FILE_3" ]]; then
-        mv $FILE_3 logs/
+        mv $FILE_3 ../logs/
         echo "$FILE_CHECK3 created successfully"
     else
         echo "Failed to create $LOG_1"

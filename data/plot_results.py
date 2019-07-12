@@ -71,28 +71,44 @@ def count_network(net, arr):
         arr[3] += 1
 
 # Reading the results
-res = rr.get_results()
+res_path = "../results"
+rej_path = "../rejected_results"
+res = rr.get_results(res_path)
+rej_res = rr.get_results(rej_path)
+
+# function to sort results into corresponding lists
+def sort_results(res, grade_list, order_list, vid_time_list, grade_time_list, user_reason_list, device_arr, age_arr, network_arr):
+    for user in res:
+        grade_list.append(user[0])
+        order_list.append(user[1])
+        vid_time_list.append(user[2])
+        grade_time_list.append(user[3])
+        count_device(user[5], device_arr)
+        count_age(user[6], age_arr)
+        count_network(user[7], network_arr)
+        # make a pair of userID and reason
+        pair = [user[4], user[8]]
+        user_reason_list.append(pair)
 
 grade_list = []
+rej_grade_list = []
 order_list = []
+rej_order_list = []
 vid_time_list = []
+rej_vid_time_list = []
 grade_time_list = []
+rej_grade_time_list = []
 user_reason_list = []
+rej_user_reason_list = []
 device_arr = np.zeros(5, dtype=int)
+rej_device_arr = np.zeros(5, dtype=int)
 age_arr = np.zeros(7, dtype=int)
+rej_age_arr = np.zeros(7, dtype=int)
 network_arr = np.zeros(4, dtype=int)
+rej_network_arr = np.zeros(4, dtype=int)
 
-for user in res:
-    grade_list.append(user[0])
-    order_list.append(user[1])
-    vid_time_list.append(user[2])
-    grade_time_list.append(user[3])
-    count_device(user[5], device_arr)
-    count_age(user[6], age_arr)
-    count_network(user[7], network_arr)
-    # make a pair of userID and reason
-    pair = [user[4], user[8]]
-    user_reason_list.append(pair)
+sort_results(res, grade_list, order_list, vid_time_list, grade_time_list, user_reason_list, device_arr, age_arr, network_arr)
+sort_results(rej_res, rej_grade_list, rej_order_list, rej_vid_time_list, rej_grade_time_list, rej_user_reason_list, rej_device_arr, rej_age_arr, rej_network_arr)
 
 # Interpret Grades
 grades = np.stack((grade_list), axis = -1)
@@ -111,7 +127,7 @@ grades_z_std = np.std(grades_z, axis=1)
 grades_se = grades_std / np.sqrt(np.shape(grades)[1])
 grades_z_se = grades_z_std / np.sqrt(np.shape(grades_z)[1])
 
-x = np.array([0, .5, 1, 2, 4])
+x = np.array([0, .5, 1, 2, 4, 8])
 
 # Create Log File
 log = open(log_name, "w+")
@@ -135,7 +151,7 @@ log.write(se_str)
 log.write("STANDARDIZED GRADES:\n")
 for grade in grades_z:
     grade_z_str = np.array2string(a=grade,precision=3,separator=' ') + "\n"
-    log.write(grade_str)
+    log.write(grade_z_str)
 log.write("MEAN:\n")
 mean_z_str = np.array2string(a=grades_z_mean,precision=3,separator=' ') + "\n"
 log.write(mean_z_str)
@@ -217,27 +233,27 @@ for pair in user_reason_list:
 
 log.close()
 
-#plt.figure()
-#plt.style.use('ggplot')
-#plt.xlabel('seconds of buffering')
-#plt.ylabel('grade')
-#plt.plot(x, grades_mean, "blue")
-#plt.errorbar(x, grades_mean, yerr=grades_se, fmt="-o", ecolor="red", alpha=0.5)
-#plt.legend(['mean','Standard Error'],
-#            loc='upper right',
-#            numpoints=1,
-#            fancybox=True)
-#plt.savefig(plot_name)
-#
-#plt.figure()
-#plt.style.use('ggplot')
-#plt.xlabel('seconds of buffering')
-#plt.ylabel('grade')
-#plt.plot(x, grades_z_mean, "blue")
-#plt.errorbar(x, grades_z_mean, yerr=grades_z_se, fmt="-o", ecolor="red", alpha=0.5)
-#plt.legend(['mean','Standard Error'],
-#            loc='upper right',
-#            numpoints=1,
-#            fancybox=True)
-#plt.savefig(z_name)
+plt.figure()
+plt.style.use('ggplot')
+plt.xlabel('seconds of buffering')
+plt.ylabel('grade')
+plt.plot(x, grades_mean, "blue")
+plt.errorbar(x, grades_mean, yerr=grades_se, fmt="-o", ecolor="red", alpha=0.5)
+plt.legend(['mean','Standard Error'],
+            loc='upper right',
+            numpoints=1,
+            fancybox=True)
+plt.savefig(plot_name)
+
+plt.figure()
+plt.style.use('ggplot')
+plt.xlabel('seconds of buffering')
+plt.ylabel('grade')
+plt.plot(x, grades_z_mean, "blue")
+plt.errorbar(x, grades_z_mean, yerr=grades_z_se, fmt="-o", ecolor="red", alpha=0.5)
+plt.legend(['mean','Standard Error'],
+            loc='upper right',
+            numpoints=1,
+            fancybox=True)
+plt.savefig(z_name)
 
