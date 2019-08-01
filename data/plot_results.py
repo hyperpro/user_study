@@ -19,6 +19,10 @@ z_name = inp + "_standardized_plot.png"
 log_name = inp + "_results.log"
 header = "LOG OF " + inp + " SURVEY RESULTS\n\n"
 
+# x axis configuration
+x = np.array([2, 4])
+x_label = "seconds of buffering"
+
 # Function to standardize scores
 def zscore(a, axis=0, ddof=0):
     a = np.asanyarray(a)
@@ -127,8 +131,6 @@ grades_z_std = np.std(grades_z, axis=1)
 grades_se = grades_std / np.sqrt(np.shape(grades)[1])
 grades_z_se = grades_z_std / np.sqrt(np.shape(grades_z)[1])
 
-x = np.array([0, .5, 1, 2, 4, 8])
-
 # Create Log File
 log = open(log_name, "w+")
 log.write(header)
@@ -235,7 +237,7 @@ log.close()
 
 plt.figure()
 plt.style.use('ggplot')
-plt.xlabel('seconds of buffering')
+plt.xlabel(x_label)
 plt.ylabel('grade')
 plt.plot(x, grades_mean, "blue")
 plt.errorbar(x, grades_mean, yerr=grades_se, fmt="-o", ecolor="red", alpha=0.5)
@@ -247,7 +249,7 @@ plt.savefig(plot_name)
 
 plt.figure()
 plt.style.use('ggplot')
-plt.xlabel('seconds of buffering')
+plt.xlabel(x_label)
 plt.ylabel('grade')
 plt.plot(x, grades_z_mean, "blue")
 plt.errorbar(x, grades_z_mean, yerr=grades_z_se, fmt="-o", ecolor="red", alpha=0.5)
