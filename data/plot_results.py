@@ -20,8 +20,9 @@ log_name = inp + "_results.log"
 header = "LOG OF " + inp + " SURVEY RESULTS\n\n"
 
 # x axis configuration
-x = np.array([2, 4])
-x_label = "seconds of buffering"
+#x = np.array([2, 4])
+x = ["no buffering", "1", "3", "7", "10"]
+x_label = "location of buffering (seconds)"
 
 # Function to standardize scores
 def zscore(a, axis=0, ddof=0):
