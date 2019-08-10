@@ -3,7 +3,7 @@ import glob
 import re
 import os, os.path
 
-vid_path = "../videos/buffer_location"
+vid_path = "../videos/buffer_location2"
 list_dir = os.listdir(vid_path)
 count = 0
 for file in list_dir:

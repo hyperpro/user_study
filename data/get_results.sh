@@ -1,15 +1,29 @@
 #!/bin/bash
 # A script to read results and return plots and a log
 
+ls ../videos
+
 echo "Please enter a name to name the result plots and log:"
 read RES_NAME
+
+if ! [[ -d "../videos/$RES_NAME" ]]; then
+    echo "Video directory does not exist."
+    exit 1
+fi
+
+fig_folder=../fig/$RES_NAME
+
+if ! [[ -d "$fig_folder" ]]; then
+    mkdir fig_folder
+    echo "$fig_folder directory created successfully"
+fi
 
 PLOT_1=${RES_NAME}_plot.png
 PLOT_2=${RES_NAME}_standardized_plot.png
 LOG_1=${RES_NAME}_results.log
 
-FILE_CHECK1=../fig/$PLOT_1
-FILE_CHECK2=../fig/$PLOT_2
+FILE_CHECK1=$fig_folder/$PLOT_1
+FILE_CHECK2=$fig_folder/$PLOT_2
 FILE_CHECK3=../logs/$LOG_1
 
 FILE_1=$PLOT_1

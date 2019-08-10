@@ -27,7 +27,7 @@ def getLength(filename):
 inp = sys.argv[-1]
 result_path = inp
 
-vid_path = "../videos/buffer_location"
+vid_path = "../videos/buffer_location2"
 list_dir = os.listdir(vid_path)
 count = 0
 lengths = []
