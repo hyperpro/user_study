@@ -3,14 +3,17 @@ import glob
 import re
 import os, os.path
 
-vid_path = "../videos/buffer_location2"
-list_dir = os.listdir(vid_path)
-count = 0
-for file in list_dir:
-    if file.endswith(".mp4"):
-        count += 1
+def get_results(path, vid):
+    
+    # Count the number of videos
+    vid_path = "../videos/" + vid
+    list_dir = os.listdir(vid_path)
+    count = 0
+    for file in list_dir:
+        if file.endswith(".mp4"):
+            count += 1
 
-def get_results(path):
+    # Get Results
     txt_path = os.path.join(path, "*.txt")
     txt_files = glob.glob(txt_path)
     ret = []

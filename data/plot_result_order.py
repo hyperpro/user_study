@@ -43,8 +43,8 @@ def single_order_plot(num_graph):
     # Reading the results
     res_path = "../results"
     rej_path = "../rejected_results"
-    res = rr.get_results(res_path)
-    rej_res = rr.get_results(rej_path)
+    res = rr.get_results(res_path, inp)
+    rej_res = rr.get_results(rej_path, inp)
 
     # Make empty list of lists
     list_stack = []

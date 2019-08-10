@@ -78,8 +78,8 @@ def count_network(net, arr):
 # Reading the results
 res_path = "../results"
 rej_path = "../rejected_results"
-res = rr.get_results(res_path)
-rej_res = rr.get_results(rej_path)
+res = rr.get_results(res_path, inp)
+rej_res = rr.get_results(rej_path, inp)
 
 # function to sort results into corresponding lists
 def sort_results(res, grade_list, order_list, vid_time_list, grade_time_list, user_reason_list, device_arr, age_arr, network_arr):
