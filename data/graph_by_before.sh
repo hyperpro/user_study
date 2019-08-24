@@ -12,9 +12,9 @@ if ! [[ -d "../videos/$RES_NAME" ]]; then
 fi
 
 fig_folder=../fig/$RES_NAME
-subfolder=$fig_folder/without_first
-log_file=${RES_NAME}_without_first.log
-png_file=${RES_NAME}_without_first_plot.png
+subfolder=$fig_folder/by_before
+log_file=${RES_NAME}_by_before.log
+png_file=${RES_NAME}_by_before_plot.png
 
 if ! [[ -d "$fig_folder" ]]; then
     mkdir $fig_folder
@@ -26,7 +26,7 @@ if ! [[ -d "$subfolder" ]]; then
     echo "$subfolder directory created successfully"
 fi
 
-python plot_wo_first.py $RES_NAME
+python plot_by_before.py $RES_NAME
 
 if [[ -f "$png_file" ]]; then
     mv $png_file $subfolder
