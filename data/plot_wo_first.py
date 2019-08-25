@@ -74,8 +74,8 @@ def plot_without_first():
         std_errs.append(se)
 
     # x axis configuration
-    x = [0, 0.5, 1, 2, 4]
-    x_label = "seconds of Buffering"
+    x = []
+    x_label = ""
 
     # Plot Graph
     plt.figure()
