@@ -74,8 +74,8 @@ def plot_without_first():
         std_errs.append(se)
 
     # x axis configuration
-    x = range(1, count + 1)
-    x_label = "Video Order"
+    x = [0, 0.5, 1, 2, 4]
+    x_label = "seconds of Buffering"
 
     # Plot Graph
     plt.figure()
