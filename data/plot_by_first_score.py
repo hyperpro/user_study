@@ -99,10 +99,7 @@ def plot_by_first_score():
     for i in range(count - 1):
         plt.plot(x, means[i], label=str(i + 2))
 #        plt.errorbar(x, means[i], yerr=std_errs[i], fmt="-o", ecolor="red", alpha=0.5)
-
-#    plt.plot(x, means, "blue")
-#    plt.errorbar(x, means, yerr=std_errs, fmt="-o", ecolor="red", alpha=0.5)
-    plt.legend(loc='upper right', numpoints=1, fancybox=True)
+    plt.legend(title="Constant Video", loc='upper right', numpoints=1, fancybox=True)
     plt.savefig(plot_name)
 
     return [means, std_errs, list_stack]
