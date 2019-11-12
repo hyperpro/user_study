@@ -21,8 +21,8 @@ header = "LOG OF " + inp + " SURVEY RESULTS\n\n"
 
 # x axis configuration
 #x = np.array([2, 4])
-x = ["no buffering", "1", "2", "3", "4"]
-x_label = "location of buffering (seconds)"
+x = ["no buffering", "1", "2", "3", "4", "5"]
+x_label = "buffered videos in incremental order"
 
 # Function to standardize scores
 def zscore(a, axis=0, ddof=0):
