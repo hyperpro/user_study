@@ -57,7 +57,15 @@ This is a localhost version.
 2. Create a new project using their "Survey Link" template.
 
 3. Fill out the survey properties. Here is an example of my settings:
-   ![MTurk Settings](https://github.com/sheric98/QoEProject/blob/master/static/MTurk_Settings.png =100x)
+   ![MTurk Settings](https://github.com/sheric98/QoEProject/blob/master/static/MTurk_Settings.png)
+
+4. Click on Design Layout. Click on "Source" in the editor to edit the text.
+   Here is an exmaple of my layout:
+   ![Design Layout](https://github.com/sheric98/QoEProject/blob/master/static/Design_Layout.png)
+
+   Remember to change the link correspondingly if you changed the port number.
+
+5. Finish and publish a batch.
 
 ## Problems(solved)
 
