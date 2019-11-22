@@ -57,7 +57,7 @@ This is a localhost version.
 2. Create a new project using their "Survey Link" template.
 
 3. Fill out the survey properties. Here is an example of my settings:
-   
+   ![MTurk Settings](https://github.com/sheric98/QoEProject/blob/master/static/MTurk_Settings.png)
 
 ## Problems(solved)
 
