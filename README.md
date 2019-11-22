@@ -12,6 +12,8 @@ This is a localhost version.
 
    if you are using Windows, make sure to click 'add to path' when installing.
 
+   if you want to run on the uchicago linux machine, follow their [guide to installing via binary archive](https://github.com/nodejs/help/wiki/Installation)
+
    To test if the installation is successful, you can input 
 
    ```shell
@@ -37,14 +39,25 @@ This is a localhost version.
 4. Start the server on localhost:
 
    ```shell
-   npm start
-   or
    node app.js
    ```
 
-5. Visit `localhost:3000` on your website, you should see the instruction page.
+5. Visit `localhost:3001` on your website, you should see the instruction page.
+
+   If you are running on the uchicago linux machine, visit `linux.cs.uchicago.edu:3001`
+
+   (Optional) If you want to change the port number, in the `app.js` file, edit line 48 to the desired port number.
 
    After finishing the test, the results will be stored in `./results/`, the file name will be the MTurk ID.
+
+## Running MTurk Survey
+
+1. Login to [Amazon Requester](https://requester.mturk.com/begin_signin) using your Amazon account.
+
+2. Create a new project using their "Survey Link" template.
+
+3. Fill out the survey properties. Here is an example of my settings:
+   
 
 ## Problems(solved)
 
