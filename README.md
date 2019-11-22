@@ -42,6 +42,8 @@ This is a localhost version.
    node app.js
    ```
 
+   If you run into any errors regarding modules not found, try removing the "node_modules" folder and go back to step 3.
+
 5. Visit `localhost:3001` on your website, you should see the instruction page.
 
    If you are running on the uchicago linux machine, visit `linux.cs.uchicago.edu:3001`
