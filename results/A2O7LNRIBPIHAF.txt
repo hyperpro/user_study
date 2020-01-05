@@ -1,0 +1,9 @@
+2,1,1,0,1,0
+1,2,3,4,5,6
+41108,17720,15355,16845,15595,14296
+31630,6180,3945,4790,3655,4581
+A2O7LNRIBPIHAF
+Desktop
+46 - 52
+WiFi
+Whether or not a goal was attempted or made.

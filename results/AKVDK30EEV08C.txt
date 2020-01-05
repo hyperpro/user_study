@@ -1,0 +1,9 @@
+2,1,0,0,1,1
+1,2,3,4,5,6
+35944,15062,9622,10802,11304,7818
+48617,7097,4025,2912,4480,4459
+AKVDK30EEV08C
+Laptop
+60 and above
+WiFi
+Whether there was a goal or not, depending on what the announcer was saying too.

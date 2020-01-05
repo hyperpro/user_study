@@ -1,0 +1,9 @@
+1,0,0,0,2,0
+1,2,3,4,5,6
+40979,26583,13228,12931,15490,11064
+31901,31874,7291,4058,6634,7430
+A1GD1V0OVM3OKA
+Laptop
+32 - 38
+Cable network
+usual situations for that case is not important

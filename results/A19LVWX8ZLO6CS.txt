@@ -1,0 +1,9 @@
+1,1,1,0,1,1
+1,2,3,4,5,6
+30073,12899,9095,10215,9361,7132
+11967,2315,12048,2331,1719,2005
+A19LVWX8ZLO6CS
+Desktop
+32 - 38
+WiFi
+Whether it showed a save or goal being scored.

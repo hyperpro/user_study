@@ -1,0 +1,9 @@
+2,1,0,0,1,0
+1,2,3,4,5,6
+40292,11977,11781,11324,13156,8778
+11855,9978,3453,2913,3203,2784
+A17DRVW0KFKBVO
+Laptop
+32 - 38
+WiFi
+Whether an important play happened or not.

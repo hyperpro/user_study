@@ -1,0 +1,9 @@
+2,1,1,0,1,0
+1,2,3,4,5,6
+2574,8076,7599,7621,8415,5560
+1908,2056,1920,1947,1829,1916
+A39S4DA571UJ1Y
+Laptop
+18 - 24
+WiFi
+Whether it had an important highlight, relevant conversation or a goal.

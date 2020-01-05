@@ -1,0 +1,9 @@
+2,1,1,0,1,0
+1,2,3,4,5,6
+5718,12120,11774,25880,19390,18103
+4150,4152,3273,4673,9198,5032
+A1DUPOUC9RNU4L
+Laptop
+53 - 59
+WiFi
+Whether or not there was a significant play

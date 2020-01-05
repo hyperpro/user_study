@@ -1,0 +1,9 @@
+2,1,0,0,1,0
+1,2,3,4,5,6
+34000,7306,13258,11247,10153,6656
+12481,11723,2771,4780,3119,2065
+A3IN9YBTU78SBS
+Laptop
+18 - 24
+WiFi
+Whether there was scoring or potential to score a goal

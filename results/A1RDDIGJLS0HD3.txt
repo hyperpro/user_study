@@ -1,0 +1,9 @@
+2,1,1,0,1,0
+1,2,3,4,5,6
+35083,10204,10782,8579,10272,6015
+18375,6846,4389,3428,3708,3414
+A1RDDIGJLS0HD3
+Desktop
+18 - 24
+WiFi
+The action content and the value of the content in relation to the event - in this case, scoring or goal defense of a soccer game.

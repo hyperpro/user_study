@@ -1,0 +1,9 @@
+2,1,0,0,1,0
+1,2,3,4,5,6
+39444,24105,23377,29486,20403,18623
+2843,4600,10247,3795,2913,2790
+A2MCRVU8I9VNHG
+Desktop
+39 - 45
+WiFi
+Whether a major event happened in the action, such as a goal.

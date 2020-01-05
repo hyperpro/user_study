@@ -1,0 +1,9 @@
+2,1,0,0,1,0
+1,2,3,4,5,6
+30267,9923,7387,119887,14166,6059
+7480,4497,2143,4107,1983,2414
+AFKZZEURTCR8U
+Desktop
+32 - 38
+WiFi
+Whether something important to the game happened during the clip.

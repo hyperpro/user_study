@@ -1,0 +1,9 @@
+2,1,0,0,1,1
+1,2,3,4,5,6
+74269,35995,33049,28457,31090,23372
+25639,24127,18698,5445,5171,8295
+A3IF13XHP5UPO2
+Laptop
+25 - 31
+WiFi
+Soccer has important events like goal scoring, making saves, celebrations etc, so i marked crucial moments as important.

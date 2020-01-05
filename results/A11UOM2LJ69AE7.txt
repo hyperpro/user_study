@@ -1,0 +1,9 @@
+2,1,0,0,1,1
+1,2,3,4,5,6
+58718,34253,16363,15173,14656,13110
+14552,6737,5238,5142,5198,6472
+A11UOM2LJ69AE7
+Smart phone
+25 - 31
+WiFi
+Checked if any portion of the video has been repeated and if it was repeated, it can be termed as unimportant. 
