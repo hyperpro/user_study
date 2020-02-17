@@ -1,0 +1,9 @@
+5,5,2,2,4,4
+1,2,3,4,5,6
+34922,11810,9392,7860,8684,8674
+26102,4130,12203,2700,16430,8715
+A2PXJTMWGUE5DC
+Desktop
+60 and above
+Cable network
+Whether the video clip provided information about what was happening in the scene.

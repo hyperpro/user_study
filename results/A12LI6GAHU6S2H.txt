@@ -1,0 +1,9 @@
+5,4,1,1,2,3
+1,2,3,4,5,6
+32032,8838,8087,11993,7208,7202
+28389,9709,4656,3462,1757,2443
+A12LI6GAHU6S2H
+Laptop
+32 - 38
+WiFi
+Whether an action occurred that was interesting or not. 
