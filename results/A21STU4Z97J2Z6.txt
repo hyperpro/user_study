@@ -1,9 +1,0 @@
-5,4,3,2,4,3
-1,2,3,4,5,6
-28946,7363,9914,7452,10877,9028
-12635,9762,7673,4086,3386,4312
-A21STU4Z97J2Z6
-Laptop
-25 - 31
-WiFi
-If there was some interesting turn in the game or a shot was scored.
