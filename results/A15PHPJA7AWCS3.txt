@@ -1,9 +1,0 @@
-4,2,1,1,1,1
-1,2,3,4,5,6
-30225,14656,11884,7251,9512,14805
-17001,4131,2397,2888,1984,2803
-A15PHPJA7AWCS3
-Desktop
-39 - 45
-WiFi
-Whether it showed the full play as well as any relevant information like showing the scoreboard.

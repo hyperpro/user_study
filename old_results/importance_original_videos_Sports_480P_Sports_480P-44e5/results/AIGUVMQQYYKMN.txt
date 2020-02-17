@@ -1,0 +1,9 @@
+5,4,1,1,1,1
+1,2,3,4,5,6
+35537,9331,7894,7375,13125,7982
+29626,9408,2581,2446,2450,2902
+AIGUVMQQYYKMN
+Laptop
+25 - 31
+Cable network
+Whether it ended in the middle of an action or nothing important happened in the video.

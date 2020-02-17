@@ -1,9 +1,0 @@
-5,4,3,2,3,4
-1,2,3,4,5,6
-30557,12200,10634,10006,10661,9691
-17441,15337,7826,4287,4734,4314
-A27VFM67RPD2L5
-Other device
-46 - 52
-WiFi
-I took a look at the action of the main video (goal being scored, player congratulating another, and the score being shown) and decided if each piece was relevant to the whole narrative. Would someone still get a majority of the "story" if that piece was left out?

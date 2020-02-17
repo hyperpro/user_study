@@ -1,9 +1,0 @@
-4,3,2,2,3,4
-1,2,3,4,5,6
-38496,8325,9464,7667,15721,11953
-18117,21512,2447,3149,3315,2265
-A18VIO909RWY6D
-Desktop
-25 - 31
-WiFi
-The context of what was being shown and how important it was to the game as a whole.

@@ -27,15 +27,15 @@ def getLength(filename):
 inp = sys.argv[-1]
 result_path = inp
 
-vid_path = "../videos/buffer_location3"
+vid_path = "../videos/video_importance"
 list_dir = os.listdir(vid_path)
 count = 0
 lengths = []
 for vid in list_dir:
     if vid.endswith(".mp4"):
         count += 1
-        full_vid_path = vid_path + "/" + vid
-        lengths.append(getLength(full_vid_path))
+        # full_vid_path = vid_path + "/" + vid
+        # lengths.append(getLength(full_vid_path))
 
 def print_no_n(line):
     if line[-1] == '\n':
@@ -51,9 +51,13 @@ with open(result_path, "r") as fp:
     name = lines[4]
     print_no_n(name)
 
-    # Print Original times
-    print("Original Video Lengths:")
-    print(lengths)
+    # # Print Original times
+    # print("Original Video Lengths:")
+    # print(lengths)
+
+    # Print scores
+    print("User Scores:")
+    print(lines[0])
 
     # Print times
     times = re.split(r'[,\n]', lines[2])[:-1]

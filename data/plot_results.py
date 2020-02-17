@@ -21,8 +21,8 @@ header = "LOG OF " + inp + " SURVEY RESULTS\n\n"
 
 # x axis configuration
 #x = np.array([2, 4])
-x = ["no buffering", "1", "2", "3", "4", "5"]
-x_label = "buffered videos in incremental order"
+x = ["full_length", "1", "2", "3", "4", "5"]
+x_label = "Scores"
 
 # Function to standardize scores
 def zscore(a, axis=0, ddof=0):
@@ -260,3 +260,5 @@ plt.legend(['mean','Standard Error'],
             fancybox=True)
 plt.savefig(z_name)
 
+print(grades_mean)
+print(grades_z_mean)
