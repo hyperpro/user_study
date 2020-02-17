@@ -1,19 +1,23 @@
 {% extends "base.html" %} {% block main %}
 <div class="col-md-6 col-md-offset-3" style="text-align:center">
     <h2>Please check your feeling:</h2>
-    <h3>If this is the first video (the 25-second video), please click the button "Is The 25-second Clip".</h3> 
-    <h3>If this is not the first video, please select your feeling to this clip, "important" or "unimportant" in terms of the contribution to your watching experience of the 25-second video. If a clip is regarded as "important", you care more about the video quality of this clip than other "unimportant" clips. </h3>
+    <h3>If this is the full video (around 20-30 seconds), please check the box "Strongly Agree.</h3> 
+    <h3>If this is not the full video, please select your feeling to this video clip. Do you think the content of this clip is important throughout the full video, and you want to pay attention to this clip? </h3>
     <h3>Progress: {{count}} / {{num_vids}}</h3>
 </div>
 
 <div class="col-md-6 col-md-offset-3">
     <form action= "next" method="POST" style="text-align:center">
         <div class="btn-group-vertical" data-toggle="buttons" id="Inputs">
-            <label class="btn btn-default"><input id="Is A Important Clip" name="sentiment" required="" type="radio" value="1" /><h4>Is A Important Clip</h4>
+            <label class="btn btn-default"><input id="StronglyPositive" name="sentiment" required="" type="radio" value="5" /><h4>Strongly Agree</h4>
             </label> 
-            <label class="btn btn-default"><input id="Not A Important Clip" name="sentiment" required="" type="radio" value="0" /><h4>Not A Important Clip</h4>
+            <label class="btn btn-default"><input id="Positive" name="sentiment" required="" type="radio" value="4" /><h4>Agree</h4>
             </label>
-            <label class="btn btn-default"><input id="Is The 25-second Clip" name="sentiment" required="" type="radio" value="2" /><h4>Is The 25-second Clip</h4>
+            <label class="btn btn-default"><input id="Neutral" name="sentiment" required="" type="radio" value="3" /><h4>Neutral</h4>
+            </label> 
+            <label class="btn btn-default"> <input id="Negative" name="sentiment" required="" type="radio" value="2" /><h4>Disagree</h4>
+            </label> 
+            <label class="btn btn-default"> <input id="StronglyNegative" name="sentiment" required="" type="radio" value="1" /><h4>Strongly Disagree</h4>
             </label> 
         </div>
         </br></br>
