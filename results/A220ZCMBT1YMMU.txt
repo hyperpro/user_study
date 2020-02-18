@@ -1,0 +1,9 @@
+5,3,2,3,2,2
+1,2,3,4,5,6
+16626,2316,2267,2649,1885,1948
+4144,1585,2723,1300,1984,1457
+A220ZCMBT1YMMU
+Laptop
+46 - 52
+WiFi
+If the action matched the first clip

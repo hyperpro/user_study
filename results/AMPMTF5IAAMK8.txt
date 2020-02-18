@@ -1,0 +1,9 @@
+4,4,4,5,4,2
+1,2,3,4,5,6
+20551,13839,12588,5990,9303,12694
+41389,7345,4042,12513,7242,27697
+AMPMTF5IAAMK8
+Laptop
+32 - 38
+Cable network
+how important to the event was it

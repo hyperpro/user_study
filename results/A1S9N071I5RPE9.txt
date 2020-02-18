@@ -1,0 +1,9 @@
+5,4,5,5,4,4
+1,2,3,4,5,6
+31817,9538,8516,19848,9455,11281
+19871,6444,2272,5672,8925,3144
+A1S9N071I5RPE9
+Other device
+25 - 31
+WiFi
+Whether it contained the main action.
